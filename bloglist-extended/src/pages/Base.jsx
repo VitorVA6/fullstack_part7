@@ -4,7 +4,6 @@ import Navbar from '../components/Navbar'
 import { Typography } from '@mui/material'
 
 const Base = () => {
-
   return (
     <div>
       <Navbar />
@@ -12,10 +11,12 @@ const Base = () => {
         variant='h3'
         sx={{
           marginBottom: '30px',
-          marginTop: '30px'
+          marginTop: '30px',
         }}
-      >Blog App</Typography>
-      <Outlet/>
+      >
+        Blog App
+      </Typography>
+      <Outlet />
     </div>
   )
 }

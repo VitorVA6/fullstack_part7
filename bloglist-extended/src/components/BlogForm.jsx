@@ -16,7 +16,7 @@ const BlogForm = () => {
     const blog = {
       title,
       url,
-      author
+      author,
     }
     dispatch(createBlog(blog))
     setTitle('')
@@ -60,9 +60,11 @@ const BlogForm = () => {
         variant='outlined'
         sx={{
           marginBottom: '5px',
-          marginTop: '15px'
+          marginTop: '15px',
         }}
-      >create</Button>
+      >
+        create
+      </Button>
     </form>
   )
 }

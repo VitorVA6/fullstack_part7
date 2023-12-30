@@ -13,7 +13,10 @@ const blogSlice = createSlice({
       return [...state, action.payload]
     },
     updateBlog(state, action){
-      return state.map(b => b.id === action.payload.id ? action.payload : b)
+      return state.map(b => b.id === action.payload.id
+        ? { ...action.payload, user: b.user }
+        : b
+      )
     },
     deleteBlog(state, action){
       return state.filter(b => b.id !== action.payload)

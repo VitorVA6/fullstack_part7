@@ -19,13 +19,13 @@ describe('<Blog />', () => {
       user: {
         id: '123',
         username: 'vitorva6',
-        name: 'vitor'
-      }
+        name: 'vitor',
+      },
     }
 
     const userMock = {
       username: 'user123',
-      name: 'user doe'
+      name: 'user doe',
     }
 
     updateMock = jest.fn()
@@ -37,7 +37,7 @@ describe('<Blog />', () => {
         user={userMock}
         handleDelete={deleteMock}
         handleUpdate={updateMock}
-      />
+      />,
     ).container
   })
 
@@ -72,9 +72,7 @@ test('blog form calls handler one time and the handler receives tha data correct
   const user = userEvent.setup()
   const createMock = jest.fn()
 
-  render(
-    <BlogForm handleCreate={createMock} />
-  )
+  render(<BlogForm handleCreate={createMock} />)
 
   const titleInput = screen.getByPlaceholderText('title')
   const authorInput = screen.getByPlaceholderText('author')
@@ -90,6 +88,6 @@ test('blog form calls handler one time and the handler receives tha data correct
   expect(createMock.mock.calls[0][0]).toEqual({
     title: 'clean code',
     author: 'uncle bob',
-    url: 'www.cleancode.com'
+    url: 'www.cleancode.com',
   })
 })

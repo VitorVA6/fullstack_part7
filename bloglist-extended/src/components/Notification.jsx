@@ -6,12 +6,9 @@ const Notification = () => {
 
   return (
     <div>
-      {
-        notification &&
-        <Alert severity={notification.type}>
-          {notification.text}
-        </Alert>
-      }
+      {notification && (
+        <Alert severity={notification.type}>{notification.text}</Alert>
+      )}
     </div>
   )
 }

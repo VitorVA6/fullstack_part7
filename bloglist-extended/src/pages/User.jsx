@@ -7,9 +7,9 @@ const User = () => {
   const users = useSelector(({ user }) => user)
   const id = useParams().id
 
-  const user = users.find(u => u.id === id)
+  const user = users.find((u) => u.id === id)
 
-  if(!user) return null
+  if (!user) return null
 
   return (
     <div>
@@ -18,17 +18,17 @@ const User = () => {
         variant='h5'
         sx={{
           marginTop: '20px',
-          marginBottom: '10px'
+          marginBottom: '10px',
         }}
-      >Added blogs</Typography>
+      >
+        Added blogs
+      </Typography>
       <ul>
-        {
-          user.blogs.map(blog => (
-            <li key={blog.id}>
-              <Typography variant='subtitle1'>{blog.title}</Typography>
-            </li>
-          ))
-        }
+        {user.blogs.map((blog) => (
+          <li key={blog.id}>
+            <Typography variant='subtitle1'>{blog.title}</Typography>
+          </li>
+        ))}
       </ul>
     </div>
   )

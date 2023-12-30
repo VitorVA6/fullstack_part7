@@ -18,20 +18,23 @@ const App = () => {
 
   useEffect(() => {
     dispatch(getUser())
-  },[dispatch])
+  }, [dispatch])
 
   return (
     <Container>
       <div>
-        <Notification/>
+        <Notification />
         <Routes>
-          <Route path='/' element={<Base/>}>
-            <Route index element={user ? <Home/> : <Navigate to='/login'/>}/>
-            <Route path='users' element={<Users/>}/>
-            <Route path='users/:id' element={<User/>}/>
-            <Route path='blogs/:id' element={<Blog/>}/>
+          <Route path='/' element={<Base />}>
+            <Route index element={user ? <Home /> : <Navigate to='/login' />} />
+            <Route path='users' element={<Users />} />
+            <Route path='users/:id' element={<User />} />
+            <Route path='blogs/:id' element={<Blog />} />
           </Route>
-          <Route path='/login' element={user ? <Navigate to='/'/> : <Login/>}/>
+          <Route
+            path='/login'
+            element={user ? <Navigate to='/' /> : <Login />}
+          />
         </Routes>
       </div>
     </Container>

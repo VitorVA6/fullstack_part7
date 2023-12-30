@@ -13,31 +13,34 @@ const Togglable = ({ buttonLabel, children }) => {
   }
 
   return (
-    <Box sx={{
-      marginBottom: '30px'
-    }}>
+    <Box
+      sx={{
+        marginBottom: '30px',
+      }}
+    >
       <div style={hideWhenVisible}>
         <Button
           variant='outlined'
           onClick={toggleVisibility}
           sx={{
-            marginBottom: '10px'
+            marginBottom: '10px',
           }}
-        >{buttonLabel}</Button>
+        >
+          {buttonLabel}
+        </Button>
       </div>
       <div style={showWhenVisible}>
         {children}
-        <Button
-          variant='outlined'
-          onClick={toggleVisibility}
-        >cancel</Button>
+        <Button variant='outlined' onClick={toggleVisibility}>
+          cancel
+        </Button>
       </div>
     </Box>
   )
 }
 
 Togglable.propTypes = {
-  buttonLabel: PropTypes.string.isRequired
+  buttonLabel: PropTypes.string.isRequired,
 }
 
 export default Togglable

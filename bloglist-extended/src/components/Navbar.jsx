@@ -13,7 +13,7 @@ const Navbar = () => {
   }
 
   const padding = {
-    padding: 5
+    padding: 5,
   }
 
   return (
@@ -21,13 +21,15 @@ const Navbar = () => {
       <Toolbar
         sx={{
           display: 'flex',
-          justifyContent: 'space-between'
+          justifyContent: 'space-between',
         }}
       >
-        <Box sx={{
-          display: 'flex',
-          alignItems: 'center'
-        }}>
+        <Box
+          sx={{
+            display: 'flex',
+            alignItems: 'center',
+          }}
+        >
           <Button color='inherit' component={Link} to='/'>
             blogs
           </Button>
@@ -35,12 +37,16 @@ const Navbar = () => {
             users
           </Button>
         </Box>
-        <Box sx={{
-          display: 'flex',
-          alignItems: 'center'
-        }}>
+        <Box
+          sx={{
+            display: 'flex',
+            alignItems: 'center',
+          }}
+        >
           <Typography variant='subtitle1'>{user?.name} logged in</Typography>
-          <Button color='inherit' onClick={handleLogout}>logout</Button>
+          <Button color='inherit' onClick={handleLogout}>
+            logout
+          </Button>
         </Box>
       </Toolbar>
     </AppBar>
